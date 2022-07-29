@@ -32,5 +32,15 @@ public class AdminService {
 	            return false;
 	        }
 	}
+	
+	public Boolean logoutUser(String adminId)
+	{
+		if(!(userRepo.existsById(adminId))){
+            return true;
+        }
+        userRepo.deleteById(adminId);
+        return (!(userRepo.existsById(adminId)));
+		
+	}
 
 }

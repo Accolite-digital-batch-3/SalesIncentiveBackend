@@ -10,7 +10,8 @@ import com.example.SalesIncentiveBackend.repository.SalesPersonRepository;
 @Service
 public class SalesPersonService {
 	
-	private final SalesPersonRepository salesrepo;
+
+	final SalesPersonRepository salesrepo;
 	
 	public SalesPersonService(SalesPersonRepository salesrepo)
 	{
@@ -32,8 +33,31 @@ public class SalesPersonService {
 		return salesrepo.findAll();
 	}
 	
+	public Boolean salesLogin(SalesPerson user)
+	{
+		if(!salesrepo.existsByName(user.getName()))
+		{
+			return false;
+		}
+		if(salesrepo.existsByName(user.getName()))
+		{
+			return true;
+		}
+		if(user.getPassword().equals(salesrepo.findById(user.getSalesPersonId()).get().getPassword())) {
+            salesrepo.save(user);
+            return true;
+        } 
+		return false;
+	}
 
-	
+	public Boolean logoutSalesUser(String name)
+	{
+		if(!(salesrepo.existsByName(name))){
+            return true;
+        }
+        salesrepo.deleteByName(name);
+        return (!(salesrepo.existsByName(name)));
+	}
 	
 
 }

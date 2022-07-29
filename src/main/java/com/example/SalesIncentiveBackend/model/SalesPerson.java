@@ -8,7 +8,6 @@ import javax.persistence.Id;
 public class SalesPerson {
 
 	@Id
-
 	private Long salesPersonId;
 	private String password;
 	private String name;
@@ -23,7 +22,7 @@ public class SalesPerson {
 	private int totalSales;
 	private float uptoDateCommission;
 	
-	
+
 	public SalesPerson()
 	{
 		
