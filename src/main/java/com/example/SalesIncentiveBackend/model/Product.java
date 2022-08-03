@@ -23,8 +23,8 @@ public class Product {
     @JoinColumn(name="type_id",nullable = false)
     private ProductType type;
 
-    @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "product")
+    @JsonBackReference
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "product",fetch = FetchType.LAZY)
     private List<SalesLineItem> salesLineItems;
 
     @Column(name="product_name")

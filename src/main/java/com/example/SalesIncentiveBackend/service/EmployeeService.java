@@ -5,6 +5,7 @@ import com.example.SalesIncentiveBackend.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -29,6 +30,12 @@ public class EmployeeService {
 	public List<Employee> findAllEmployee()
 	{
 		return employeeRepository.findAll();
+	}
+
+	public Employee findByEmpId(int empId){
+		Employee employee=employeeRepository.findById(empId);
+		System.out.println(employee.getEmpEmail());
+		return employeeRepository.findById(empId);
 	}
 
 	public Employee employeeLogin(String email,String password){

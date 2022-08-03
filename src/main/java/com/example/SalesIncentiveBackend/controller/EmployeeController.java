@@ -65,4 +65,11 @@ public class EmployeeController {
     }
 
 
+    @GetMapping("/{employeeId}")
+    public ResponseEntity<Employee> findById(@PathVariable int employeeId)
+    {
+        Employee employee=employeeService.findByEmpId(employeeId);
+
+        return new ResponseEntity<>(employee,HttpStatus.OK);
+    }
 }

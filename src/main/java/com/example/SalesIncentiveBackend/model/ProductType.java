@@ -1,6 +1,7 @@
 package com.example.SalesIncentiveBackend.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,11 +23,11 @@ public class ProductType {
     @Column(name="type_name")
     private String typeName;
 
-    @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "type")
+    @JsonBackReference
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "type",fetch = FetchType.LAZY)
     private List<Product> products;
 
-    @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "type")
+    @JsonBackReference
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "type",fetch = FetchType.LAZY)
     private List<CommissionModel> commssionModels;
 }
