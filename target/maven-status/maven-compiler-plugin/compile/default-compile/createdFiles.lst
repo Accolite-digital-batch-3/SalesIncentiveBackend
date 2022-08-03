@@ -1,2 +1,5 @@
+com\example\SalesIncentiveBackend\dto\SalesLineItemDto.class
+com\example\SalesIncentiveBackend\mapper\SalesLineItemMapperImpl.class
 com\example\SalesIncentiveBackend\service\LocationQuotaService.class
+com\example\SalesIncentiveBackend\mapper\SalesLineItemMapper.class
 com\example\SalesIncentiveBackend\mapper\EmployeeMapperImpl.class

@@ -23,7 +23,7 @@ public class Employee {
     private LocationQuota location;
 
     @JsonBackReference
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "employee",fetch = FetchType.LAZY)
     private List<SalesLineItem> salesLineItems;
 
     @Column(name="emp_name")
@@ -34,6 +34,9 @@ public class Employee {
 
     @Column(name="emp_password")
     private String empPassword;
+
+    @Column(name="reporting_head_id")
+    private int reportingHeadId;
 
     @Column(name="role")
     private String role;

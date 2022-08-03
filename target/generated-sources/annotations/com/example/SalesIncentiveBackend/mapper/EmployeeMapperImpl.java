@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-08-02T16:52:02+0530",
+    date = "2022-08-03T19:21:35+0530",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 17.0.4 (Oracle Corporation)"
 )
 public class EmployeeMapperImpl implements EmployeeMapper {
@@ -24,6 +24,7 @@ public class EmployeeMapperImpl implements EmployeeMapper {
         employeeDto.setEmpEmail( employee.getEmpEmail() );
         employeeDto.setEmpPassword( employee.getEmpPassword() );
         employeeDto.setRole( employee.getRole() );
+        employeeDto.setReportingHeadId( employee.getReportingHeadId() );
 
         return employeeDto;
     }
@@ -40,6 +41,7 @@ public class EmployeeMapperImpl implements EmployeeMapper {
         employee.setEmpName( employeeDto.getEmpName() );
         employee.setEmpEmail( employeeDto.getEmpEmail() );
         employee.setEmpPassword( employeeDto.getEmpPassword() );
+        employee.setReportingHeadId( employeeDto.getReportingHeadId() );
         employee.setRole( employeeDto.getRole() );
 
         return employee;

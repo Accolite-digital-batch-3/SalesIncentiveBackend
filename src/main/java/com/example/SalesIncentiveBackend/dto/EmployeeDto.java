@@ -25,4 +25,6 @@ public class EmployeeDto {
 
     private String role;
 
+    private int reportingHeadId;
+
 }
